@@ -11,8 +11,8 @@ int[] EnterSomeNumbers(int i, int[] array)//вводим число, запис�
 
     Console.WriteLine($"\nВведите целое число, если Вы закончили ввод, наберите 'Завершить' i = {i}");
     string str = Console.ReadLine()!;
-    bool checkForEnd = int.TryParse(str, out int checkedNumber);
- //   Console.WriteLine("Print1");
+    bool checkForEnd = int.TryParse(str, out int checkedNumber);//если число - попадаем в иф, если не число попадаем в элс
+ Console.WriteLine("the array inside the method");//внутри метода массив записался
     PrintArray(array);
 
     if (checkForEnd)
@@ -25,16 +25,18 @@ int[] EnterSomeNumbers(int i, int[] array)//вводим число, запис�
         i++;
         /*Console.WriteLine("Print2");
         PrintArray(array);*/
-        EnterSomeNumbers(i, array);
+        EnterSomeNumbers(i, array);//рекурсия - чтобы записывать числа, пока пользователю не надоест
+        
     }
     else
     {
         Console.WriteLine("Ввод данных завершен");
+    
 
     }
 
 
-    return array;
+   return array;
 
 }
 
@@ -42,7 +44,7 @@ int[] EnterSomeNumbers(int i, int[] array)//вводим число, запис�
 
 void PrintArray(int[] arr)
 {
-    Console.Write($" \n ваши числа:");
+    Console.Write($" \n Array:");
     for (int i = 0; i < arr.Length; i++)
     {
 
@@ -56,6 +58,7 @@ void Main()
     int a = 0;
     int[] array = new int[0];
     int[] arrayOfYourNumbers = EnterSomeNumbers(a, array);
+     Console.Write($" \n the array outside the method:");//снаружи метода массив записал только первое значение
  PrintArray(arrayOfYourNumbers);
 
 }
