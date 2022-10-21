@@ -8,33 +8,33 @@ b2 = 4 -> (-0,5; -0,5)*/
 
 void Main()
 {
-Console.WriteLine("Введите значение k1");
-double k1 = double.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите значение b1");
-double b1 = double.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите значение k2");
-double k2 = double.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите значение b2");
-double b2 = double.Parse(Console.ReadLine()!);
-FindXAndY(k1, b1, k2, b2);
+    Console.WriteLine("Введите значение k1");
+    double k1 = double.Parse(Console.ReadLine()!);
+    Console.WriteLine("Введите значение b1");
+    double b1 = double.Parse(Console.ReadLine()!);
+    Console.WriteLine("Введите значение k2");
+    double k2 = double.Parse(Console.ReadLine()!);
+    Console.WriteLine("Введите значение b2");
+    double b2 = double.Parse(Console.ReadLine()!);
+    FindXAndY(k1, b1, k2, b2);
 
 }
 
 void FindXAndY(double K1, double B1, double K2, double B2)
 {
-if(K1==K2)
-{
-     Console.WriteLine("Прямые паралельны");
+    if (K1 == K2)
+    {
+        Console.WriteLine("Прямые паралельны");
 
-}
-else
-{
+    }
+    else
+    {
 
-double x = (B2 - B1)/(K1-K2);
-Console.WriteLine($"x = {x}");
+        double x = (B2 - B1) / (K1 - K2);
+        Console.WriteLine($"x = {x}");
 
-double y = K1*x +B1;
-Console.WriteLine($"y = {y}");
-}
+        double y = K1 * x + B1;
+        Console.WriteLine($"y = {y}");
+    }
 }
 Main();
