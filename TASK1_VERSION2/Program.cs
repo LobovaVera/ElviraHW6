@@ -4,6 +4,27 @@
 1, -7, 567, 89, 223-> 3*/
 
 
+ Console.WriteLine($"\nВведите целое число, если Вы закончили ввод, наберите 'Завершить'");
+    string str = Console.ReadLine()!;
+   bool checkForEnd = int.TryParse(str, out int checkedNumber);
+    int count = 0;
+    
+ while(checkForEnd)
+ {
+    
+    Console.WriteLine($"\nВведите целое число номер {count}, если Вы закончили ввод, наберите 'Завершить'");
+    str = Console.ReadLine()!;
+    checkForEnd = int.TryParse(str, out int checkedNum);
+    if (checkedNum>0)
+    {
+        count++;
+    }
+ }
+
+ Console.WriteLine($"Ввод данных завершен, количество чисел больше нуля равно {count}");
+
+
+/* еще вариант, который не получился
 
 int[] EnterSomeNumbers(int i, int[] array)//вводим число, записываем в массивб если не число - завершаем.
 {
@@ -25,7 +46,7 @@ int[] EnterSomeNumbers(int i, int[] array)//вводим число, запис�
         i++;
         /*Console.WriteLine("Print2");
         PrintArray(array);*/
-        EnterSomeNumbers(i, array);//рекурсия - чтобы записывать числа, пока пользователю не надоест
+       /* EnterSomeNumbers(i, array);//рекурсия - чтобы записывать числа, пока пользователю не надоест
         
     }
     else
@@ -62,4 +83,4 @@ void Main()
  PrintArray(arrayOfYourNumbers);
 
 }
-Main();
+Main();*/
